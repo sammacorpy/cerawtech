@@ -7,16 +7,33 @@ $('document').ready(function() {
 
 
     var imga = document.getElementById("quotespic");
-    imga.width = window.innerWidth * 0.6;
-    imga.height = window.innerWidth * 0.38;
+    var aadj = window.innerWidth
+    if (window.innerHeight < window.innerWidth) {
+        aadj = window.innerHeight;
+    }
+
+    if (window.innerWidth < 550) {
+        aadj = window.innerWidth;
+    }
+
+    imga.width = aadj * 0.9;
+    imga.height = aadj * 0.58;
 
 
 
 
 
     window.addEventListener('resize', function() {
-        imga.width = window.innerWidth * 0.6;
-        imga.height = window.innerWidth * 0.38;
+        var aadj = window.innerWidth
+        if (window.innerHeight < window.innerWidth) {
+            aadj = window.innerHeight;
+        }
+        if (window.innerWidth < 550) {
+            aadj = window.innerWidth;
+        }
+
+        imga.width = aadj * 0.9;
+        imga.height = aadj * 0.58;
 
     });
 
